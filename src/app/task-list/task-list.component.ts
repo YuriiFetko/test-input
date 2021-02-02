@@ -25,6 +25,7 @@ import {UP_ARROW, DOWN_ARROW, ENTER} from '@angular/cdk/keycodes';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
+  searchQuery;
 
   ngOnInit(): void {
   }
@@ -46,7 +47,7 @@ export class TaskListComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   keypPress() {
-
+    this.searchQuery = '';
   }
 
   // tslint:disable-next-line:typedef

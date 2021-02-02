@@ -6,5 +6,6 @@
        (keyup)="handleKeydown($event)"
        (keypress)="keypPress()"
        (keydown.enter)="onInputKeydown($event)"
+       [(ngModel)]="searchQuery"
        class="input-dropdown-s"
        placeholder="Select or type in...">
