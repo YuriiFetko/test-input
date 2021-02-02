@@ -5,7 +5,7 @@
        (click)="clickInput()"
        (input)="inputValue($event)"
        (keyup)="handleKeydown($event)"
-       (keyup)="keypPress()"
+       (keydown)="keypPress()"
        (keydown.enter)="onInputKeydown($event)"
        [(ngModel)]="searchQuery"
        class="input-dropdown-s"
