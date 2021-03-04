@@ -46,12 +46,12 @@ export class TaskListComponent implements OnInit {
           e.touches[0].pageY - e.touches[1].pageY
         );
 
-        if ((this.zoom >= 0.5 && this.zoom <= 100) && this.dist1 > dist2) {
-          this.zoom = this.zoom - 9.999;
+        if ((this.zoom >= 1.1 && this.zoom <= 100) && this.dist1 > dist2) {
+          this.zoom = this.zoom - 9.8;
         }
 
         if ((this.zoom <= 99) && this.dist1 < dist2) {
-          this.zoom = this.zoom + 9.999;
+          this.zoom = this.zoom + 9.8;
         }
       }
     })
