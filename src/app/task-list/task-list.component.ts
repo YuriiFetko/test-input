@@ -40,18 +40,18 @@ export class TaskListComponent implements OnInit {
 
   @HostListener('touchmove', ['$event']) move(e) {
     setTimeout(() => {
-      if (e.targetTouches.length === 2 && e.changedTouches.length === 2) {
+      if (e.targetTouches.length === 2 && e.changedTouches.length === 2){
         const dist2 = Math.hypot(
           e.touches[0].pageX - e.touches[1].pageX,
           e.touches[0].pageY - e.touches[1].pageY
         );
 
         if ((this.zoom >= 0.5 && this.zoom <= 1) && this.dist1 > dist2) {
-          this.zoom = this.zoom - 3;
+          this.zoom = this.zoom - 0.1;
         }
 
-        if ((this.zoom <= 100) && this.dist1 < dist2) {
-          this.zoom = this.zoom + 3;
+        if ((this.zoom <= 0.99) && this.dist1 < dist2) {
+          this.zoom = this.zoom + 0.1;
         }
       }
     })
