@@ -47,11 +47,11 @@ export class TaskListComponent implements OnInit {
         );
 
         if ((this.zoom >= 1.1 && this.zoom <= 100) && this.dist1 > dist2) {
-          this.zoom = this.zoom - 99;
+          this.zoom = this.zoom - 10;
         }
 
         if ((this.zoom <= 100) && this.dist1 < dist2) {
-          this.zoom = this.zoom + 99;
+          this.zoom = this.zoom + 10;
         }
       }
     })
