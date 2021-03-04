@@ -10,4 +10,5 @@
 .img-block img {
   width: 100%;
   touch-action: manipulation;
+  transition: .1s;
 }
