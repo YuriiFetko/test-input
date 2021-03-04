@@ -27,7 +27,7 @@ import {UP_ARROW, DOWN_ARROW, ENTER} from '@angular/cdk/keycodes';
 export class TaskListComponent implements OnInit {
   searchQuery;
   dist1 = 0;
-  public zoom = 1;
+  public zoom = 100;
 
   @HostListener('touchstart', ['$event']) start(e) {
     if (e.targetTouches.length === 2) {

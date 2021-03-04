@@ -1,6 +1,6 @@
 <div class="wrapper">
   <h2>task-list works!</h2>
-  <h3>1</h3>
+  <h3>2</h3>
   <div class="img-block">
     <!--  <img src="docs/assets/1563793926959.png" alt="photo">-->
     <pinch-zoom>
@@ -12,10 +12,10 @@
 
   <div class="img-block">
     <img src="assets/1563793926959.png" alt="photo"
-         [ngStyle]="{'width': + 100 * zoom + '%'}">
+         [ngStyle]="{'width': zoom + '%'}">
   </div>
 
-  {{'width' + 100 * zoom + '%'}}
+  {{'width ' + zoom + '%'}}
 
 </div>
 <!--<p>test 5 keydown</p>-->

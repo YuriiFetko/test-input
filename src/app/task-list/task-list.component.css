@@ -4,6 +4,7 @@
 
 .img-block {
   touch-action: manipulation;
+  overflow: scroll;
 }
 .img-block img {
   width: 100%;
