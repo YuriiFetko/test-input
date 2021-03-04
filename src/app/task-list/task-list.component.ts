@@ -39,14 +39,14 @@ export class TaskListComponent implements OnInit {
   }
 
   @HostListener('touchmove', ['$event']) move(e) {
-    setTimeout(() => {
+    // setTimeout(() => {
       if (e.targetTouches.length === 2 && e.changedTouches.length === 2){
         const dist2 = Math.hypot(
           e.touches[0].pageX - e.touches[1].pageX,
           e.touches[0].pageY - e.touches[1].pageY
         );
 
-        if ((this.zoom >= 1.1 && this.zoom <= 100) && this.dist1 > dist2) {
+        if ((this.zoom >= 1.1 && this.zoom <= 101) && this.dist1 > dist2) {
           this.zoom = this.zoom - 5;
         }
 
@@ -54,7 +54,7 @@ export class TaskListComponent implements OnInit {
           this.zoom = this.zoom + 5;
         }
       }
-    })
+  //  })
   }
 
   ngOnInit(): void {
