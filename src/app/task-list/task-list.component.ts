@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  EventEmitter,
+  EventEmitter, HostListener,
   Input,
   OnChanges,
   OnInit,
@@ -26,32 +26,38 @@ import {UP_ARROW, DOWN_ARROW, ENTER} from '@angular/cdk/keycodes';
 })
 export class TaskListComponent implements OnInit {
   searchQuery;
+  dist1 = 0;
+  public zoom = 1;
+
+  @HostListener('touchstart', ['$event']) start(e) {
+    if (e.targetTouches.length === 2) {
+      this.dist1 = Math.hypot(
+        e.touches[0].pageX - e.touches[1].pageX,
+        e.touches[0].pageY - e.touches[1].pageY
+      );
+    }
+  }
+
+  @HostListener('touchmove', ['$event']) move(e) {
+    setTimeout(() => {
+      if (e.targetTouches.length === 2 && e.changedTouches.length === 2) {
+        const dist2 = Math.hypot(
+          e.touches[0].pageX - e.touches[1].pageX,
+          e.touches[0].pageY - e.touches[1].pageY
+        );
+
+        if ((this.zoom >= 0.5 && this.zoom <= 1) && this.dist1 > dist2) {
+          this.zoom = this.zoom - 0.1;
+        }
+
+        if ((this.zoom <= 0.99) && this.dist1 < dist2) {
+          this.zoom = this.zoom + 0.1;
+        }
+      }
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  clickInput() {
-
-  }
-
-  // tslint:disable-next-line:typedef
-  inputValue(e: Event) {
-    console.log(e);
-  }
-
-  // tslint:disable-next-line:typedef
-  handleKeydown(e: KeyboardEvent) {
-
-  }
-
-  // tslint:disable-next-line:typedef
-  keypPress() {
-    this.searchQuery = '';
-  }
-
-  // tslint:disable-next-line:typedef
-  onInputKeydown(e: any) {
-    alert('enter');
-  }
 }
