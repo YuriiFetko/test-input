@@ -2,6 +2,9 @@
   padding: 0 20px;
 }
 
+.img-block {
+  touch-action: manipulation;
+}
 .img-block img {
   width: 100%;
   touch-action: manipulation;
